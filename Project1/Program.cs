@@ -27,10 +27,14 @@ string PromptString(string message)
 
 void ShowStringArray (string [] array)
 {
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
-        Console.Write($"{array[i]}, ");
-    Console.Write("\b\b]");
+    if (array.Length == 0) Console.Write("[]");
+    else
+    {
+        Console.Write("[");
+        for (int i = 0; i < array.Length; i++)
+            Console.Write($"{array[i]}, ");
+        Console.Write("\b\b]");
+    }
 }
 
 string [] GenerateStringArray(int Length)
